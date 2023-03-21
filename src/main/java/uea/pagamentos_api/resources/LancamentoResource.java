@@ -3,6 +3,8 @@ package uea.pagamentos_api.resources;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,8 +28,8 @@ public class LancamentoResource {
 	private LancamentoService lancamentoService;
 
 	@GetMapping
-	public ResponseEntity<List<ResumoLancamentoDto>> resumir(LancamentoFilter lancamentoFilter) {
-		List<ResumoLancamentoDto> resumos = lancamentoService.resumir(lancamentoFilter);
+	public ResponseEntity<Page<ResumoLancamentoDto>> resumir(LancamentoFilter lancamentoFilter, Pageable pageable) {
+		Page<ResumoLancamentoDto> resumos = lancamentoService.resumir(lancamentoFilter, pageable);
 		return ResponseEntity.ok().body(resumos);
 	}
 

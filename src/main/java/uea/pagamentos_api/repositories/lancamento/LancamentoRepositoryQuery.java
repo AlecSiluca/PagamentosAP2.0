@@ -1,12 +1,12 @@
 package uea.pagamentos_api.repositories.lancamento;
 
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import uea.pagamentos_api.dto.ResumoLancamentoDto;
 import uea.pagamentos_api.repositories.filters.LancamentoFilter;
 
 public interface LancamentoRepositoryQuery {
-	
-	public List<ResumoLancamentoDto> filtrar(LancamentoFilter lancamentoFilter);
+	public Page<ResumoLancamentoDto> filtrar(LancamentoFilter lancamentoFilter,Pageable pageable);
 	
 }

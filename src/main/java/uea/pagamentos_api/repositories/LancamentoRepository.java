@@ -7,5 +7,7 @@ import uea.pagamentos_api.models.Lancamento;
 import uea.pagamentos_api.repositories.lancamento.LancamentoRepositoryQuery;
 @Repository
 public interface LancamentoRepository extends JpaRepository<Lancamento, Long>, LancamentoRepositoryQuery {
-
+	
+	
+	
 }
